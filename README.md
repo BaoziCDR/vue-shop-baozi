@@ -2,6 +2,12 @@
 
 vue2.0 + vue-router + vuex + axios + mock.js(模拟数据) + ES6 + less
 
+后端使用 Servlet （不要问我为什么使用落后的技术
+
+## 后端地址
+
+https://gitee.com/BaoziCDR/servlet-shop-baozi
+
 ## 简介
 
 vuex + webStorage 实现了购物车功能,axios拦截,配合路由钩子函数实现权限控制、登录、登出功能
@@ -41,3 +47,5 @@ npm run dev
 
 # build for production with minification
 npm run build
+
+```
