@@ -4,7 +4,7 @@
       <ul>
         <li v-for="k in list" :key="k.id">
           <router-link :to="{name:'详情页'}">
-            <img v-lazy="k.imgpath">
+            <img v-lazy="k.imgPath">
           </router-link>
           <h2 class="section2-list-title ac">
             {{k.title}}
