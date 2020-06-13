@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="detail">
+<!--    <p>{{ $route.params.name}}</p>-->
     <v-swiper/>
     <v-chose/>
     <v-content/>
@@ -16,6 +17,8 @@ import Footer from '@/components/detail/footer.vue'
 import Baseline from '@/common/_baseline.vue'
 import detail from '@/http/mock.js' //模拟数据
 export default {
+
+
   components:{
     'v-swiper':Swiper,
     'v-chose':Chose,

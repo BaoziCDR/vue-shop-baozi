@@ -2,8 +2,7 @@
   <section class="chose" v-if="view">
     <div class="chose-view">
       <h1 class="chose-view-title">
-        {{view.title}} ~~
-        <span>(已选 {{colText}} - {{sizeText}})</span>
+        {{view.title}}
       </h1>
       <span>{{view.price}}元</span>
       <p class="chose-view-intro">{{view.intro}}</p>
