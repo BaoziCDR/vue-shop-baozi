@@ -12,6 +12,20 @@ const state = {
   fetchLoading:false,     //全局加载状态的Loading
   selectedList:'',         //已选择的购物车商品列表
   unSelectedList:'',      //未选择的购物车商品列表,提交订单后用它替换carList
+  chose:[
+    {
+      'col':'土豪金',
+      'size':'256g'
+    },
+    {
+       'col':'东北银',
+       'size':'128g'
+    },
+    {
+      'col':'喜庆红',
+      'size':'64g'
+    }
+  ]
 }
 
 //更改 store 中的状态的唯一方法:提交 mutation
@@ -85,10 +99,12 @@ let vm = new Vue({});
 const actions = {
 
 // 父组件发送异步请求
-  setDatas({commit}) {
+  setDatas({commit}, id) {
+    console.log("id="+id)
     vm.$api({
         method:'post',
-        url:"/detail"
+        url:"/detail",
+        params:{id:id}
       }).then(response=>{
         commit('SET_DATAS',response.data);
       })

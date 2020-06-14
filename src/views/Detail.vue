@@ -14,7 +14,6 @@ import Chose from '@/components/detail/chose.vue'
 import Content from '@/components/detail/content.vue'
 import Footer from '@/components/detail/footer.vue'
 import Baseline from '@/common/_baseline.vue'
-import detail from '@/http/mock.js' //模拟数据
 export default {
   components:{
     'v-swiper':Swiper,
@@ -24,8 +23,10 @@ export default {
     'v-baseline':Baseline
   },
 
-  beforeCreate(){
-    this.$store.dispatch('setDatas');
+  beforeCreate() {
+    let id = this.$route.params.id;
+    console.log("id1=" + id)
+    this.$store.dispatch('setDatas', id)
   }
 }
 </script>

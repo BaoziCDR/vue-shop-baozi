@@ -6,7 +6,7 @@
     </h1>
     <ul class="section1-list">
       <li v-for="k in list" :key="k.id">
-        <router-link :to="{name:'详情页'}">
+        <router-link :to="{name:'详情页',params:{id:k.id}}">
           <img v-lazy="k.imgPath" alt="">
         </router-link>
       </li>

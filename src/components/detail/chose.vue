@@ -2,8 +2,7 @@
   <section class="chose" v-if="view">
     <div class="chose-view">
       <h1 class="chose-view-title">
-        {{view.title}} ~~
-        <span>(已选 {{colText}} - {{sizeText}})</span>
+        {{view.title}}
       </h1>
       <span>{{view.price}}元</span>
       <p class="chose-view-intro">{{view.intro}}</p>
@@ -12,14 +11,14 @@
     <div class="chose-mychosed" ontouchstart="">
       <div class="colChose">
         <span
-           v-for="(k,i) in view.chose"
+           v-for="(k,i) in chose"
            :class="{active:colSelected==i}"
            @click="colChose(i)"
          >{{k.col}}</span>
       </div>
       <div class="sizeChose" >
         <span
-          v-for="(k,i) in view.chose"
+          v-for="(k,i) in chose"
           :class="{active:sizeSelected==i}"
           @click="sizeChose(i)"
         >
@@ -39,25 +38,23 @@
 import {
   MessageBox
 } from 'mint-ui';
-import {
-  mapState
-} from 'vuex'
+import {mapState} from 'vuex'
+
 
 
 export default {
-
   computed: mapState({
-
+    chose: state => state.detail.chose,
     view: state => state.detail.productDatas.view,
     colSelected: state => state.detail.colSelected,
     sizeSelected: state => state.detail.sizeSelected,
     // 返回当前选择颜色的值(innerText)
     colText() {
-      return this.view.chose[this.colSelected].col
+      return this.chose[this.colSelected].col
     },
     // 返回当前选择规格的值(innerText)
     sizeText() {
-      return this.view.chose[this.sizeSelected].size
+      return this.chose[this.sizeSelected].size
     }
 
   }),

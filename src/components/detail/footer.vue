@@ -43,10 +43,10 @@ export default {
       const product = [{
         title: this.productDatasView.title,
         price: this.productDatasView.price,
-        size: this.productDatasView.chose[this.sizeSelected].size,
-        col: this.productDatasView.chose[this.colSelected].col,
+        size: this.$store.state.detail.chose[this.sizeSelected].size,
+        col: this.$store.state.detail.chose[this.colSelected].col,
         id: this.productDatasView.id,
-        imgPath: this.$store.state.detail.productDatas.swiper[0].imgSrc,
+        imgPath: this.$store.state.detail.productDatas.swiper[0].imgPath,
         choseBool: false
       }];
 
