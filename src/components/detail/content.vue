@@ -1,19 +1,19 @@
 <template lang="html">
   <section class="content">
-    <div class="img-wrap" v-for="k in content">
-      <img :src="k.imgSrc">
+    <div class="img-wrap" v-if="view">
+      {{ view.content }}
     </div>
   </section>
 
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
-  computed:{
-    content(){
-      return this.$store.state.detail.productDatas.contentImgSrc
-    }
-  }
+  computed:mapState({
+    view: state => state.detail.productDatas.view,
+  })
 }
 </script>
 

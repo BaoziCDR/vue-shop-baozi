@@ -45,7 +45,7 @@ export default new Router({
            requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录才能进入的
        },
     }, {
-      path: '/detail/:name',
+      path: '/detail/:id',
       name: '详情页',
       component: Detail
     }, {

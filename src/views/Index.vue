@@ -41,17 +41,14 @@ export default {
       datas: {
         section1:{},
         section2:{},
-        section3:{},
-        section4:{},
         swiper:[]
       },
       loading: true
     }
   },
-
   beforeCreate() {
     this.$api({
-      method: 'post',
+      method: 'get',
       url: '/index'
     }).then((response) => {
       this.datas = response.data;
