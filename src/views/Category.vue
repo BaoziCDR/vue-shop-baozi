@@ -5,8 +5,8 @@
     </v-header>
     <section class="view">
       <v-aside :datas="allData.aside"/>
-      <router-view 
-        :datas="allData.aside" 
+      <router-view
+        :datas="allData.aside"
       />
     </section>
   </div>
@@ -29,7 +29,7 @@ export default {
   },
   created () {
     this.$api({
-      method: 'post',
+      method: 'get',
       url: '/category'
     }).then((res) => {
       this.allData = res.data
