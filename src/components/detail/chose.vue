@@ -41,7 +41,6 @@ import {
 import {mapState} from 'vuex'
 
 
-
 export default {
   computed: mapState({
     chose: state => state.detail.chose,
