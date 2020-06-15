@@ -41,9 +41,9 @@ export default new Router({
       path: '/user',
       name: '用户页',
       component: User,
-      meta: {
-           requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录才能进入的
-       },
+      // meta: {
+      //      requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录才能进入的
+      //  },
     }, {
       path: '/detail/:id',
       name: '详情页',
@@ -52,10 +52,13 @@ export default new Router({
       path: '/search',
       name: '搜索页',
       component: Search
-    },{
+    }, {
       path: '/login',
       name: '登录页',
-      component: Login
+      component: Login,
+      meta: {
+        isLogin: true
+      }
     }
   ]
 })
