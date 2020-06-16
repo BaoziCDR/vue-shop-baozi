@@ -2,10 +2,10 @@
   <section class="chose" v-if="view">
     <div class="chose-view">
       <h1 class="chose-view-title">
-        {{view.title}}
+        {{view.name}}
       </h1>
       <span>{{view.price}}元</span>
-      <p class="chose-view-intro">{{view.intro}}</p>
+      <p class="chose-view-intro">(已选 {{colText}} - {{sizeText}})</p>
     </div>
   <!-- 添加空函数 解决Safari浏览器 :active无效 -->
     <div class="chose-mychosed" ontouchstart="">
@@ -46,12 +46,13 @@ export default {
 
   computed: mapState({
     chose: state => state.detail.chose,
-    view: state => state.detail.productDatas.view,
+    view: state => state.detail.productDatas,
     colSelected: state => state.detail.colSelected,
     sizeSelected: state => state.detail.sizeSelected,
     // 返回当前选择颜色的值(innerText)
     colText() {
       return this.chose[this.colSelected].col
+
     },
     // 返回当前选择规格的值(innerText)
     sizeText() {

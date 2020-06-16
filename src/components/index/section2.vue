@@ -4,20 +4,20 @@
       <ul>
         <li v-for="k in list" :key="k.id">
           <router-link :to="{name:'详情页',params:{id:k.id}}">
-            <img v-lazy="k.imgPath">
+            <img v-lazy="k.img">
           </router-link>
           <h2 class="section2-list-title ac">
-            {{k.title}}
+            {{k.name}}
           </h2>
-          <p class="section2-list-price">
+          <p class="section2-list-price ac">
             ￥{{k.price}}
           </p>
         </li>
       </ul>
     </div>
-    <router-link class="section2-banner" :to="{name:'详情页'}">
+    <div class="section2-banner">
       <img v-lazy="banner">
-    </router-link>
+    </div>
   </section>
 </template>
 
@@ -25,11 +25,12 @@
 import { Lazyload } from 'mint-ui';
 
 export default {
+  data() {
+    return {
+      banner: "https://dummyimage.com/400x100/04a1f7/FFF.png"
+    }
+  },
   props: {
-    banner: {
-      type: String,
-      default: ''
-    },
     list: {
       type: Array,
       default: function () {

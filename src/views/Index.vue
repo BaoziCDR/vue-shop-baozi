@@ -2,10 +2,10 @@
   <!-- 在首页父组件发送http请求,后将数据通过props传递给子组件,可减少请求次数,减少服务器压力 -->
   <div class="index">
     <v-header/>
-    <v-swiper :swiperData="datas.swiper"/>
+    <v-swiper />
     <v-service/>
-    <v-section1 :list="datas.section1.list" :banner='datas.section1.banner'/>
-    <v-section2 :list="datas.section2.list" :banner='datas.section2.banner'/>
+    <v-section1 :list="loadList(`1`)" />
+    <v-section2 :list="loadList(`2`)" />
 <!--    <v-section3/>-->
 <!--    <v-section4 :list="datas.section4.list" :banner='datas.section4.banner'/>-->
     <v-baseline/>
@@ -38,23 +38,34 @@ export default {
   },
   data() {
     return {
-      datas: {
-        section1:{},
-        section2:{},
-        swiper:[]
-      },
+      datas: [],
       loading: true
     }
   },
   beforeCreate() {
     this.$api({
       method: 'get',
-      url: '/index'
+      url: '/getAllGoods'
     }).then((response) => {
       this.datas = response.data;
     }).catch(function(error) {
       alert(error)
     })
+  },
+  computed: {
+    loadList() {
+      return (isShow) => {
+        let newData = [];
+        if (this.datas != null) {
+          this.datas.forEach(item => {
+            if (item.isShow == isShow) {
+              newData.push(item);
+            }
+          });
+          return newData;
+        }
+      }
+    }
   }
 }
 </script>

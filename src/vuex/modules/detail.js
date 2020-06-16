@@ -102,7 +102,7 @@ const actions = {
   setDatas({commit}, id) {
     console.log("id="+id)
     vm.$api({
-        method:'post',
+        method:'get',
         url:"/detail",
         params:{id:id}
       }).then(response=>{

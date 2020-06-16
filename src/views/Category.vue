@@ -4,9 +4,9 @@
       <h1 slot="title">商品分类</h1>
     </v-header>
     <section class="view">
-      <v-aside :datas="allData.aside"/>
+      <v-aside :datas="allData"/>
       <router-view
-        :datas="allData.aside"
+        :datas="allData"
       />
     </section>
   </div>
@@ -24,7 +24,7 @@ export default {
   },
   data () {
     return {
-      allData: {}
+      allData: []
     }
   },
   created () {
