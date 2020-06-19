@@ -6,7 +6,7 @@ vue2.0 + vue-router + vuex + axios + ES6 + less
 
 ## 后端地址
 
-https://gitee.com/BaoziCDR/servlet-shop-baozi
+https://github.com/BaoziCDR/servlet-shop-baozi
 
 ## 简介
 
