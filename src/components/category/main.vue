@@ -6,7 +6,7 @@
          :key='i'
       >
         <router-link :to="{name:'详情页', params:{id:k.id}}">
-          <img v-lazy="k.img"><span>{{k.name}}</span>
+          <img v-lazy="k.img[0]"><span>{{k.name}}</span>
         </router-link>
       </li>
     </ul>

@@ -4,7 +4,7 @@
       <ul>
         <li v-for="k in list" :key="k.id">
           <router-link :to="{name:'详情页',params:{id:k.id}}">
-            <img v-lazy="k.img">
+            <img v-lazy="k.img[0]">
           </router-link>
           <h2 class="section2-list-title ac">
             {{k.name}}
@@ -15,9 +15,9 @@
         </li>
       </ul>
     </div>
-    <div class="section2-banner">
+    <router-link :to="{ name: '详情页',params: {id:17}}" class="section2-banner">
       <img v-lazy="banner">
-    </div>
+    </router-link>
   </section>
 </template>
 
@@ -27,7 +27,7 @@ import { Lazyload } from 'mint-ui';
 export default {
   data() {
     return {
-      banner: "https://dummyimage.com/400x100/04a1f7/FFF.png"
+      banner: "http://localhost:8080/img/HOME/section2.jpg"
     }
   },
   props: {

@@ -11,10 +11,22 @@
 import {mapState} from "vuex";
 
 export default {
+  data:{
+    FormArr : [ {
+      index : 1,
+    } ]
+  },
 //   computed:mapState({
 //     view: state => state.detail.productDatas,
 //   })
-// }
+  methods : {
+    AddForm: function () {
+      this.FormArr.push({
+        index: index++,
+      })
+    },
+  }
+}
 </script>
 
 <style lang="less" scoped>

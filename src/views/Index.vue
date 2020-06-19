@@ -6,8 +6,6 @@
     <v-service/>
     <v-section1 :list="loadList(`1`)" />
     <v-section2 :list="loadList(`2`)" />
-<!--    <v-section3/>-->
-<!--    <v-section4 :list="datas.section4.list" :banner='datas.section4.banner'/>-->
     <v-baseline/>
     <v-footer/>
   </div>
@@ -19,11 +17,8 @@ import Swiper from '@/components/index/swiper.vue'
 import Service from '@/components/index/service.vue'
 import Section1 from '@/components/index/section1.vue'
 import Section2 from '@/components/index/section2.vue'
-import Section3 from '@/components/index/section3.vue'
-import Section4 from '@/components/index/section4.vue'
 import Baseline from '@/common/_baseline.vue'
 import Footer from '@/common/_footer.vue'
-import index from '@/http/mock.js' //模拟数据
 export default {
   components: {
     'v-header': Header,
@@ -31,8 +26,6 @@ export default {
     'v-service': Service,
     'v-section1': Section1,
     'v-section2': Section2,
-    'v-section3': Section3,
-    'v-section4': Section4,
     'v-baseline': Baseline,
     'v-footer': Footer
   },

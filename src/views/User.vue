@@ -5,7 +5,7 @@
         <div class="header-icon">
           <span class="icon2-user"></span>
         </div>
-        <span>欢迎您，{{userinfo.username}}</span>
+        <span>欢迎您，{{userinfo.account}}</span>
       </div>
 
       <router-link class="header" :to="{ name: '登录页'}" v-else>
@@ -110,7 +110,6 @@
 </template>
 
 <script>
-  // import * as mockData from '@/http/mock.js' //模拟数据
 
   import Baseline from '@/common/_baseline.vue'
   import Footer from '@/common/_footer.vue'

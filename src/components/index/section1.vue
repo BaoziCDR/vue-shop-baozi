@@ -1,13 +1,13 @@
 <template lang="html">
   <section class="section1">
     <h1 class="section1-title">
-      section1
+      每日精品
       <i class="icon-right"></i>
     </h1>
     <ul class="section1-list">
       <li v-for="k in list" :key="k.id">
         <router-link :to="{name:'详情页',params:{id:k.id}}">
-          <img v-lazy="k.img" alt="">
+          <img v-lazy="k.img[0]" alt="">
         </router-link>
       </li>
     </ul>
@@ -23,7 +23,7 @@ import { Lazyload } from 'mint-ui';
 export default {
   data() {
     return {
-      banner: "https://dummyimage.com/400x100/04a1f7/FFF.png"
+      banner: "http://localhost:8080/img/HOME/section1.png"
     }
   },
   props: {

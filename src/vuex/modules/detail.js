@@ -147,7 +147,7 @@ const actions = {
     commit(types.RESET_CARLIST);
   },
 
-// 分别保存打钩的商品和为打钩的商品
+// 分别保存打钩的商品和未打钩的商品
   setSelectedList({commit,getters}) {
     Util.setLocal(getters.selectedList,'selectedList');
     commit('SET_SELECTEDLIST');
