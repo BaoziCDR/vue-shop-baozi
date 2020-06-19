@@ -12,6 +12,8 @@ https://gitee.com/BaoziCDR/servlet-shop-baozi
 
 vuex + webStorage 实现了购物车功能,axios拦截,配合路由钩子函数实现权限控制、登录、登出功能
 
+API对接部分已经完成，运行前需要先运行后端API获取数据
+
 ## 预览
 
 ![](./static/car.gif)   ![](./static/login.gif)
@@ -54,6 +56,7 @@ vuex + webStorage 实现了购物车功能,axios拦截,配合路由钩子函数�
 ## Build Setup
 
 ``` bash
+# 运行前需要先运行后端API获取数据
 # install dependencies
 npm install
 
