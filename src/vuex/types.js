@@ -45,3 +45,6 @@ export const CHANGE_TOKEN = 'CHANGE_TOKEN'
 
 // 分类页的aside index
 export const CHANGE_TABINDEX = 'CHANGE_TABINDEX'
+
+// login页的用户数据储存
+export const SAVE_USERINFO = 'SAVE_USERINFO'

@@ -1,14 +1,14 @@
 <template lang="html">
 
   <div class="nothing">
-    <v-gologin/>
+
 
     <div class="nothing-img">
       <img src="../../assets/car/images/cart.svg" alt="">
     </div>
-    <router-link class="nothing-toshop" :to="{name:'分类页'}">
+    <router-link class="nothing-toshop" :to="{name:'首页'}">
       <p>购物车是空的</p>
-      <router-link :to="{ name: '分类页', params: {} }">去逛逛</router-link>
+      <router-link :to="{ name: '首页', params: {} }">去逛逛</router-link>
     </router-link>
   </div>
 
@@ -16,11 +16,8 @@
 </template>
 
 <script>
-import Gologin from '@/components/car/gologin.vue'
 export default {
-  components: {
-    'v-gologin': Gologin
-  }
+
 }
 </script>
 

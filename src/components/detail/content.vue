@@ -1,7 +1,7 @@
 <template lang="html">
   <section class="content">
-    <div class="img-wrap" v-if="view">
-      {{ view.content }}
+    <div class="img-wrap">
+      我是详情！！！
     </div>
   </section>
 
@@ -11,9 +11,21 @@
 import {mapState} from "vuex";
 
 export default {
-  computed:mapState({
-    view: state => state.detail.productDatas.view,
-  })
+  data:{
+    FormArr : [ {
+      index : 1,
+    } ]
+  },
+//   computed:mapState({
+//     view: state => state.detail.productDatas,
+//   })
+  methods : {
+    AddForm: function () {
+      this.FormArr.push({
+        index: index++,
+      })
+    },
+  }
 }
 </script>
 

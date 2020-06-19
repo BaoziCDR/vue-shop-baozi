@@ -1,13 +1,12 @@
 <template lang="html">
   <div class="main">
-    <h2>{{_datas.title}}</h2>
     <ul>
       <li
          v-for="(k,i) in _datas.list"
          :key='i'
       >
-        <router-link :to="{name:'详情页'}">
-          <img v-lazy="k.imgPath"><span>{{k.title}}</span>
+        <router-link :to="{name:'详情页', params:{id:k.id}}">
+          <img v-lazy="k.img[0]"><span>{{k.name}}</span>
         </router-link>
       </li>
     </ul>

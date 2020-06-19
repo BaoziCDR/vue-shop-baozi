@@ -1,12 +1,19 @@
 <template lang="html">
 
   <div class="car">
-      <header class="header">
+      <div class="header" v-if="toggle">
+        <div class="header-icon">
+          <span class="icon2-user"></span>
+        </div>
+        <span>欢迎您，{{userinfo.account}}</span>
+      </div>
+
+      <router-link class="header" :to="{ name: '登录页'}" v-else>
           <div class="header-icon">
               <span class="icon2-user"></span>
           </div>
           <span>登录/注册</span>
-      </header>
+      </router-link>
       <div class="main">
           <router-link class="my-indent" :to="{ name: ''}">
               <span class="my-indent-left">我的订单</span>
@@ -85,14 +92,15 @@
                     <span>F码通道</span><i class="icon-go"></i>
                   </p>
               </router-link>
-              <router-link :to="{ name: ''}" class="my-settle-bottom">
-                <div>
-                  <span class="icon2-settle"></span>
-                </div>
-                <p>
-                  <span>设置</span><i class="icon-go"></i>
-                </p>
+              <router-link :to="{ name: '登录页'}" class="my-settle-bottom" @click.native="logout" v-if="toggle">
+                   <div>
+                      <span class="icon2-settle"></span>
+                   </div>
+                   <p>
+                      <span>退出登录</span><i class="icon-go"></i>
+                    </p>
               </router-link>
+
           </section>
 
       </div>
@@ -102,14 +110,29 @@
 </template>
 
 <script>
-  // import * as mockData from '@/http/mock.js' //模拟数据
 
   import Baseline from '@/common/_baseline.vue'
   import Footer from '@/common/_footer.vue'
+  import {Toast} from "mint-ui";
   export default {
+    computed: {
+      toggle() {
+        return this.$store.state.login.token
+      },
+      userinfo() {
+        return this.$store.state.login.userinfo
+      }
+    },
     components: {
       'v-baseline': Baseline,
       'v-footer': Footer
+    },
+    methods: {
+      //退出登录按钮
+      logout(){
+        Toast('退出登录成功,清除token');
+        this.$store.commit('CHANGE_TOKEN',0);
+      }
     }
   }
 </script>

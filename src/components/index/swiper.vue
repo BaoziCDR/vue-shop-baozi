@@ -1,8 +1,8 @@
 <template lang="html">
     <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="k in swiperData" :key="k.id">
-        <router-link :to="{ name: '详情页',params:{id:k.id}}">
-          <img :src="k.imgPath">
+      <mt-swipe-item v-for="(k,i) in swiperData" :key="i">
+        <router-link :to="{name:'详情页',params:{id:k.id}}">
+          <img :src="k.img">
         </router-link>
       </mt-swipe-item>
     </mt-swipe>
@@ -11,14 +11,21 @@
 
 <script>
 export default {
-  props: {
-     swiperData:{
-       type:Array,
-       default:function(){
-         return []
-       }
-     }
-   },
+  data() {
+    return {
+      swiperData: [{
+        img : "http://localhost:8080/img/HOME/swiper1.jpg",
+        id : 1
+      },{
+        img : "http://localhost:8080/img/HOME/swiper2.jpg",
+        id : 19
+      },{
+        img : "http://localhost:8080/img/HOME/swiper3.jpg",
+        id : 19
+      }
+      ]
+    }
+  }
 }
 </script>
 

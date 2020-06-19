@@ -1,6 +1,6 @@
 # 技术栈
 
-vue2.0 + vue-router + vuex + axios + mock.js(模拟数据) + ES6 + less
+vue2.0 + vue-router + vuex + axios + ES6 + less
 
 后端使用 Servlet （不要问我为什么使用落后的技术
 
@@ -29,11 +29,26 @@ vuex + webStorage 实现了购物车功能,axios拦截,配合路由钩子函数�
 
 5. 简单的父子通信不需要用vuex
 
-## 待完成
+## 已完成
 
 1. 购物车内编辑(增减商品)
 
+2. 首页
+
+3. 商品详情、分类
+
+4. 简单结算
+
+5. 注册登录
+
+
+## 待完成
+
+1. 充值功能
+
 2. 搜索功能
+
+3. 收货地址功能
 
 
 ## Build Setup

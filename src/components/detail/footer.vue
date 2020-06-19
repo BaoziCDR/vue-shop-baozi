@@ -27,7 +27,7 @@ export default {
       return this.$store.state.detail.count
     },
     productDatasView () {
-      return this.$store.state.detail.productDatas.view
+      return this.$store.state.detail.productDatas
     },
     colSelected () {
       return this.$store.state.detail.colSelected
@@ -41,12 +41,12 @@ export default {
     addIntoCar () {
       //  mint-ui的弹出式提示框
       const product = [{
-        title: this.productDatasView.title,
+        title: this.productDatasView.name,
         price: this.productDatasView.price,
         size: this.$store.state.detail.chose[this.sizeSelected].size,
         col: this.$store.state.detail.chose[this.colSelected].col,
         id: this.productDatasView.id,
-        imgPath: this.$store.state.detail.productDatas.swiper[0].imgPath,
+        imgPath: this.$store.state.detail.productDatas.img[0],
         choseBool: false
       }];
 

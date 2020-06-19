@@ -4,9 +4,9 @@
       <h1 slot="title">商品分类</h1>
     </v-header>
     <section class="view">
-      <v-aside :datas="allData.aside"/>
-      <router-view 
-        :datas="allData.aside" 
+      <v-aside :datas="allData"/>
+      <router-view
+        :datas="allData"
       />
     </section>
   </div>
@@ -16,7 +16,6 @@
 
 import Header from '@/common/_header.vue'
 import Aside from '@/components/category/aside.vue'
-import category from '@/http/mock.js' //模拟数据
 export default {
   components: {
     'v-header': Header,
@@ -24,12 +23,12 @@ export default {
   },
   data () {
     return {
-      allData: {}
+      allData: []
     }
   },
   created () {
     this.$api({
-      method: 'post',
+      method: 'get',
       url: '/category'
     }).then((res) => {
       this.allData = res.data

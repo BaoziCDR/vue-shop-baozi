@@ -1,7 +1,6 @@
 <template lang="html">
 
   <div class="wrap">
-    <v-gologin></v-gologin>
     <ul class="something" v-if='carList'>
       <li v-for="(k,i) in carList">
           <div class="something-left" @click="toggle">
@@ -28,12 +27,8 @@
 
 <script>
 // 提示登录组件
-import Gologin from '@/components/car/gologin.vue'
 import Util from '../../util/common'
 export default {
-  components: {
-    'v-gologin': Gologin
-  },
   computed: {
 
     carList () {
